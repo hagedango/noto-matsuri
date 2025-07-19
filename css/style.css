@@ -1,168 +1,349 @@
-/* 基本スタイル */
+/* Global Styles */
+:root {
+    --primary-blue: #4A90E2;
+    --secondary-orange: #FF7F50;
+    --light-gray: #F8F9FA;
+    --dark-gray: #343A40;
+    --text-color: #343A40;
+    --white: #FFFFFF;
+}
+
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-}
-
-header {
-    background: #fff;
-    padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
-main {
-    display: block; /* for older browsers */
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background: #f4f4f4;
-    color: #666;
-    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: var(--light-gray);
 }
 
 .container {
-    width: 85%;
+    width: 90%;
     margin: 0 auto;
-    max-width: 1100px;
+    max-width: 1200px;
+    padding: 20px 0;
 }
 
-/* ヒーローセクション */
-.hero {
-    background: #3498db;
-    color: white;
-    padding: 4rem 0;
+/* Header */
+header {
+    background: var(--white);
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+/* Main Content Area */
+main {
+    display: block;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--dark-gray);
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* Buttons */
 .cta-button {
     display: inline-block;
-    background: #f39c12;
-    color: white;
-    padding: 0.8rem 1.8rem;
+    background: var(--secondary-orange);
+    color: var(--white);
+    padding: 0.9rem 2.2rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Pill shape */
     font-size: 1.1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-    background: #e67e22;
+    background: #e66a3e;
+    transform: translateY(-2px);
 }
 
-/* プロジェクト紹介セクション */
+.cta-button.secondary {
+    background: #95a5a6;
+}
+
+.cta-button.secondary:hover {
+    background: #7f8c8d;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #6DD5FA 100%); /* Gradient background */
+    color: var(--white);
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* Project Introduction Section */
 .project-introduction {
-    padding: 3rem 0;
-    background: #ecf0f1;
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
 }
 
 .project-introduction h2 {
-    text-align: center;
-    margin-bottom: 1rem; /* Adjusted margin */
-    font-size: 2.2rem; /* Slightly larger font size */
-    color: #2c3e50;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
 .project-introduction .subtitle {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 3rem;
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 4rem;
 }
 
 .intro-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    text-align: left;
 }
 
 .intro-item {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
 }
 
 .intro-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 .intro-item h3 {
-    font-size: 1.4rem;
-    color: #3498db;
+    font-size: 1.6rem;
+    color: var(--secondary-orange);
     margin-top: 0;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .intro-item p {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
 }
 
-/* クラウドファンディング詳細セクション */
+/* Noto Friendly Passport Section */
+.noto-passport {
+    padding: 5rem 0;
+    background: var(--light-gray);
+}
+
+.noto-passport h2 {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.passport-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.passport-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.passport-description {
+    text-align: center;
+    max-width: 700px;
+}
+
+.passport-description h3 {
+    font-size: 2.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.passport-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .passport-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .passport-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .passport-description {
+        flex: 1;
+        text-align: left;
+    }
+}
+
+/* Event Volunteer Recruitment Section */
+.volunteer-recruitment {
+    padding: 5rem 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.volunteer-recruitment h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.volunteer-recruitment .subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.volunteer-image {
+    margin-bottom: 3rem;
+}
+
+.volunteer-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.volunteer-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    text-align: left;
+}
+
+.volunteer-item {
+    background: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.volunteer-item h3 {
+    font-size: 1.6rem;
+    color: var(--secondary-orange);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.volunteer-item p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.volunteer-item.full-width {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: center;
+}
+
+.volunteer-item.full-width .cta-button {
+    margin-top: 1.5rem;
+}
+
+/* Crowdfunding Details Section */
 .crowdfunding-details {
-    padding: 3rem 0;
+    padding: 5rem 0;
+    background: var(--light-gray);
 }
 
 .crowdfunding-details h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.2rem;
-    color: #2c3e50;
+    margin-bottom: 3.5rem;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
 .details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
     align-items: stretch;
 }
 
 .detail-item {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
 .detail-item h3 {
-    font-size: 1.5rem;
-    color: #3498db;
+    font-size: 1.8rem;
+    color: var(--primary-blue);
     margin-top: 0;
     margin-bottom: 1.5rem;
+    font-weight: 600;
 }
 
 .detail-item p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
+    color: #555;
 }
 
 .detail-item ul {
@@ -175,62 +356,62 @@ footer {
 .detail-item ul li {
     margin-bottom: 0.8rem;
     font-size: 1.1rem;
+    color: #555;
 }
 
 .detail-item ul li span {
     font-weight: bold;
-    color: #3498db;
+    color: var(--secondary-orange);
     display: inline-block;
-    width: 50px; /* 割合の数値の幅を確保 */
+    width: 60px; /* Adjust width for percentage */
 }
 
-.cta-button.secondary {
-    background: #95a5a6;
-}
-
-.cta-button.secondary:hover {
-    background: #7f8c8d;
-}
-
-/* FAQセクション */
+/* FAQ Section */
 .faq {
-    padding: 3rem 0;
-    background: #ecf0f1;
+    padding: 5rem 0;
+    background: var(--white);
 }
 
 .faq h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.2rem;
-    color: #2c3e50;
+    margin-bottom: 3.5rem;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
 .faq-item {
-    max-width: 700px;
-    margin: 0 auto 1rem auto;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
 .faq-question {
-    background: #fff;
+    background: var(--white);
     width: 100%;
     text-align: left;
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
+    padding: 1.2rem 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border: none;
     cursor: pointer;
     position: relative;
-    color: #2c3e50;
+    color: var(--dark-gray);
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
 }
 
 .faq-question::after {
     content: '+';
     position: absolute;
-    right: 1.5rem;
-    font-size: 1.5rem;
+    right: 2rem;
+    font-size: 1.8rem;
     transition: transform 0.3s ease;
 }
 
@@ -239,22 +420,78 @@ footer {
 }
 
 .faq-answer {
-    background: #fff;
-    padding: 0 1.5rem;
+    background: #fdfdfd;
+    padding: 0 2rem;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
 }
 
 .faq-answer p {
     margin: 0;
-    padding-bottom: 1.5rem; /* Add padding to the bottom of the paragraph */
+    padding-bottom: 1.5rem;
     line-height: 1.7;
+    color: #555;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
 
+    .hero-content p {
+        font-size: 1.1rem;
+    }
 
+    .project-introduction h2,
+    .crowdfunding-details h2,
+    .faq h2 {
+        font-size: 2rem;
+    }
 
-body {
-    font-family: sans-serif;
+    .intro-item,
+    .detail-item,
+    .faq-item {
+        padding: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .faq-question::after {
+        right: 1.5rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .project-introduction h2,
+    .crowdfunding-details h2,
+    .faq h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-grid,
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
 }
