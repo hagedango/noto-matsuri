@@ -84,7 +84,9 @@ footer {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, #6DD5FA 100%); /* Gradient background */
+    background-image: url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
     color: var(--white);
     padding: 6rem 0;
     text-align: center;
