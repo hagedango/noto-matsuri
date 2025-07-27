@@ -24,6 +24,10 @@ body {
     padding: 20px 0;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* Header */
 header {
     background: var(--white);
@@ -80,6 +84,16 @@ footer {
 
 .cta-button.secondary:hover {
     background: #7f8c8d;
+}
+
+.cta-button.cta-highlight {
+    background: var(--primary-blue);
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
+}
+
+.cta-button.cta-highlight:hover {
+    background: #3a7ac8;
 }
 
 /* Hero Section */
@@ -496,4 +510,16 @@ footer {
     .details-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.sold-out {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
 }
